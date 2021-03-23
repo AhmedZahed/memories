@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public ImageView imageView;
-    public int mCorentImage = -1;
+    public int mCorentImage = -1; /* القيمة المبدئية بيكون -١ كيف عطاني المؤشر صفر ؟؟؟ */
     public String mTheDeatil;
 
     @Override
@@ -93,7 +93,13 @@ public class MainActivity extends AppCompatActivity {
         }
         showImage();
     } //دالة اظهار الصور
-
+    public void backbtn(View view) {
+        mCorentImage--;
+        if (mCorentImage == -1) {
+            mCorentImage = 0;
+        }
+        showImage();
+    } //دالة اظهار الصور
 
     void showImage() {
         mTheDeatil = deatil_images[mCorentImage];
